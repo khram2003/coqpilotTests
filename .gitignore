@@ -6,3 +6,6 @@ _CoqProject
 *.vo
 *.vio
 *.glob
+*.vos
+*.vok
+.lia.cache
