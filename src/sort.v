@@ -86,6 +86,8 @@ Proof.
   lia.
 Defined.
 
+Definition p1 {X L B} (l : L) (A : L -> Prop) (x : {x : X | (A l) & B}) := (proj1_sig (sig_of_sig2 x)).
+
 Theorem sort l : {l' | Permutation l l' & is_sorted l'}.
 Proof.
   intros. induction l; eauto with myconstr.
@@ -93,11 +95,10 @@ Proof.
   apply (insert_sorted a) in H0. inv H0.
   exists x0; auto.
   etransitivity.
-  
-
   2: eby apply is_inserted_perm.
     by constructor.
 Defined.
+Eval compute in (p1 (sort [3;2;4;1])).
 
 Print sort.
 
