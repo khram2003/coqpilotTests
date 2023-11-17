@@ -37,6 +37,7 @@
   };
   bundles."8.18" = {
     push-branches = [ "**" ];
+    coqPackages.coq-lsp.override.version = "0.1.8";
     coqPackages.hahn.override.version = "master";
   };
 
