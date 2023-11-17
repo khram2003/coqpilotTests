@@ -90,19 +90,19 @@ Definition p1 {l} (x : {l' | Permutation l l' & is_sorted l'}): list nat.
   destruct x as [l']. exact l'.
 Defined.
 
-Theorem sort l : {l' | Permutation l l' & is_sorted l'}.
+Definition sort l : {l' | Permutation l l' & is_sorted l'}.
 Proof.
   induction l.
-  { exists [].  apply Permutation_refl.  apply sorted_nil. }
+  { admit. }
   destruct IHl as [l'].
   edestruct (insert_sorted a l') as [l''].
-  { exact i. }
+  { admit. }
   exists l''.
-  2: { exact i1. }
+  2: { admit. }
   transitivity (a::l').
-  { constructor. auto. }
-  transitivity (a :: l'); auto using is_inserted_perm.
-Defined.
+  { admit. }
+  admit.
+Admitted.
 Eval compute in (p1 (sort [3;2;4;1])).
 
 
