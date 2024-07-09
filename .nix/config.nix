@@ -29,7 +29,7 @@
   ## If not specified, it defaults to "_CoqProject"
   # coqproject = "_CoqProject";
 
-  default-bundle = "8.18";
+  default-bundle = "8.19";
 
   bundles."8.17" = {
     push-branches = [ "master" "main" ];
@@ -39,6 +39,11 @@
     push-branches = [ "**" ];
     coqPackages.coq-lsp.override.version = "0.1.8";
     coqPackages.hahn.override.version = "master";
+  };
+  bundles."8.19" = {
+    coqPackages.coqhammer.override.version = "1.3.2-coq8.19";
+    coqPackages.hahn.override.version = "master";
+    coqPackages.coq.override.version = "8.19";
   };
 
   cachix.coq = {};
